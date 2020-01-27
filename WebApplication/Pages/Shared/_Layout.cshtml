@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+
+    <header>
+        <div class="headerFlex">
+            <a href="">
+                <img class="logo" alt="Logo" src="~/images/logo.png" />
+            </a>
+
+            <div class="flex">
+                <p> Dagens datum: @DateTime.Now.ToShortDateString()</p>
+                <script src="~/js/main.js"></script> <!--Get current day-->
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="flexBox">
+            <nav>
+                <ul>
+                    <li><a href="/">Startsidan</a></li>
+                    <li><a href="/Razor">Razor</a></li>
+                    <li><a href="/About">Om sidan</a></li>
+                </ul>
+            </nav>
+
+            <div class="mainContent">
+                <main>
+                    @RenderBody()
+                </main>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Sandra Wara - Kontakta mig via e-post: <a href="mailto:sakr0903@student.miun.se">sakr0903@student.miun.se</a></p>
+    </footer>
+
+</body>
+
+</html>

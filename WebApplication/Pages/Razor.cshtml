@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication.Pages.RazorModel
+
+@{
+    var courses = new String[] { "DT057G Webbutveckling I", // Courses - array
+
+        "DT084G Introduktion till programmering i JavaScript",
+
+        "DT163G Digital bildbehandling för webb",
+
+        "GD008G Typografi och form för webb",
+
+        "DT003G Databaser",
+
+        "DT093G Webbutveckling II",
+
+        "DT068G Webbanvändbarhet",
+
+        "DT152G Webbdesign för CMS",
+
+        "IK060G  Projektledning",
+
+        "DT173G Webbutveckling III",
+
+        "DT162G JacaScriptbaserad webbutveckling",
+
+        "DT071G Programmering i C#.NET" };
+}
+
+
+    @{
+        ViewData["Title"] = "Razor";
+
+    }
+
+    <h1>Razor</h1>
+    <p>Information</p>
+
+    <span class="date"> Datum/Klockslag:</span> @DateTime.Now <!--Get date and time-->
+
+    @{
+
+        if (DateTime.Now.DayOfWeek.ToString() == "Monday") //Set day to monday
+        {
+            <p>Idag är det Måndag</p> <!--Print out if monday-->
+        }
+        else
+        {
+            <p> Idag är det inte Måndag </p> <!--Print out if not monday-->
+        }
+    }
+
+    <h3>Kurser jag läst:</h3>
+
+    @foreach (var x in courses) //Loop trough and print out courses
+    {
+        <li>@x</li>
+    }
+
+
